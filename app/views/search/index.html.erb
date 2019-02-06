@@ -1,9 +1,11 @@
+<div class="station_list">
 <% @results.each do |result| %>
-  <div class="stations">
-    <%= result.name %>
-    <%= result.address %>
-    <%= result.fuel_type %>
-    <%= result.distance %>
-    <%= result.access_times %>
+  <div id="station">
+    <p>Station Name: <%= result.name %></p>
+    <p>Station Address: <%= result.address %></p>
+    <p>Station Fuel Type: <%= result.fuel_type %></p>
+    <p>Distance From ZipCode: <%= result.distance %></p>
+    <p>Hours: <%= result.access_times %></p>
   </div>
 <% end %>
+</div>
