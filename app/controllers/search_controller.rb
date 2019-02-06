@@ -1,5 +1,5 @@
 class SearchController < ApplicationController
   def index
-    @results = ResultsFacade.get_stations(params[:q])
+    @results = ResultsFacade.get_results(params[:q])
   end
 end
