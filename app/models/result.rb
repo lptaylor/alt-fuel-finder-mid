@@ -8,7 +8,7 @@ class Result
     @zipcode = attributes[:zip]
     @street_address = attributes[:street_address]
     @fuel_type = attributes[:fuel_type_code]
-    @access_times = attributes[:access_days_times]
+    @access_times = attributes[:access_days_time]
   end
 
   def address
