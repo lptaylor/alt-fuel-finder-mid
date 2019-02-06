@@ -16,3 +16,4 @@
 !/log/.keep
 /tmp
 /cassettes
+/config/application.yml
