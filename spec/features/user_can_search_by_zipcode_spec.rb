@@ -9,7 +9,7 @@ describe 'A User' do
     end
   end
   it 'takes me to the path search' do
-    expect current_path.to eq('/search')
+    assert_current_path('/search')
   end
   # As a user
   # When I visit "/"
@@ -17,12 +17,7 @@ describe 'A User' do
   # And I click "Locate"
   # Then I should be on page "/search"
 
-  xit 'shows list fo 10 stations within 6 miles sorted by distance' do
-    visit '/'
-
-    fill_in search_form with: '80203'
-    click_on "Locate"
-
+  it 'shows list fo 10 stations within 6 miles sorted by distance' do
     assert_selector('.stations', count: 10)
   end
   # Then I should see a list of the 10 closest stations within 6 miles sorted by distance
