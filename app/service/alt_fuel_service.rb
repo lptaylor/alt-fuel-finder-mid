@@ -15,6 +15,6 @@ class AltFuelService
      req.params['fuel_type'] = 'LPG,ELEC'
      req.params['location'] = search_location
    end
-   JSON.parse(response.body)['station_counts']
+   JSON.parse(response.body, symbolize_names: true)[:station_counts]
   end
 end
