@@ -1,12 +1,14 @@
 require 'rails_helper'
 
 describe 'A User' do
+  before(:each) do
+    VCR.use_cassette('api_search') do
+      visit '/'
+      fill_in 'q', with: '80203'
+      click_on "Locate"
+    end
+  end
   it 'takes me to the path search' do
-    visit '/'
-    save_and_open_page
-    fill_in 'q', with: '80203'
-    click_on "Locate"
-
     expect current_path.to eq('/search')
   end
   # As a user
