@@ -3,8 +3,8 @@ require 'rails_helper'
 describe 'A User' do
   it 'takes me to the path search' do
     visit '/'
-
-    fill_in search_form with: '80203'
+    save_and_open_page
+    fill_in 'q', with: '80203'
     click_on "Locate"
 
     expect current_path.to eq('/search')
@@ -29,7 +29,7 @@ describe 'A User' do
   end
   # And the stations should be limited to Electric and Propane
   xit 'each station should have attributes' do
-    
+
   end
   # And for each of the stations I should see Name, Address, Fuel Types, Distance, and Access Times
 end
