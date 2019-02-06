@@ -1,9 +1,17 @@
 class Result
+  attr_reader :name, :distance, :address, :fuel_type, :access_times
   def initialize(attributes)
     @name = attributes[:name]
     @distance = attributes[:distance]
-    @address = attributes[:address]
+    @city = attributes[:city]
+    @state = attributes[:state]
+    @zipcode = attributes[:zip]
+    @street_address = attributes[:street_address]
     @fuel_type = attributes[:fuel_type]
-    @access_times = attributes[:access_times]
+    @access_times = attributes[:access_days_times]
+  end
+
+  def address
+    "#{street_address} #{city}, #{state} #{zipcode}"
   end
 end
